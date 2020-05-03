@@ -24,7 +24,7 @@ class MKD {
     fun h5(message: String) = h(5, message)
     fun h6(message: String) = h(6, message)
 
-    operator fun plus(message: String) {
+    fun p(message: String) {
         strings.add(message)
     }
 
