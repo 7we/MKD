@@ -12,7 +12,7 @@ val markdown: String = markdown {
     ...
   """.trimIndent())
   
-  h3("This isn't actually included!")
+  h3("I'm a smaller heading!")
   + "${b("This text is bold")} and ${i("This text is in italics")}."
   
   + code("This is one line code block")
@@ -57,7 +57,7 @@ MKD is a Kotlin-DSL markdown library based on GitHub's markdown specifications.
 ...
 ```
 
-### This isn't actually included!
+### I'm a smaller heading!
 
 **This text is bold** and *This text is in italics*.
 
