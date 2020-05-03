@@ -24,8 +24,8 @@ class MKD {
     fun h5(message: String) = h(5, message)
     fun h6(message: String) = h(6, message)
 
-    fun p(message: String) {
-        strings.add(message)
+    operator fun String.unaryPlus() {
+        strings.add(this)
     }
 
     fun code(message: String) = "`$message`"
@@ -77,7 +77,7 @@ class MKD {
         private val subbing
             get() = "   ".repeat(subbed)
 
-        operator fun plus(message: String) = c(message, false)
+        operator fun String.unaryPlus() = c(this, false)
 
         fun c(message: String, complete: Boolean = true) {
             values.add("${if (ordered) "1." else "-"}${if (isTaskList) " [${if (complete) "x" else " "}]" else ""} $message")
