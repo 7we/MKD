@@ -15,7 +15,7 @@ MKD is a Kotlin-DSL markdown library based on GitHub's markdown specifications.
 <dependency>
   <groupId>com.github.7we</groupId>
   <artifactId>MKD</artifactId>
-  <version>1.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
@@ -27,7 +27,7 @@ maven {
 ```
 
 ```
-implementation 'com.github.7we:MKD:1.0'
+implementation 'com.github.7we:MKD:1.0.1'
 ```
 
 ## Learn
