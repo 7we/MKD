@@ -1,6 +1,35 @@
 # MKD
 MKD is a Kotlin-DSL markdown library based on GitHub's markdown specifications.
 
+## Maven
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+```
+
+```xml
+<dependency>
+  <groupId>com.github.7we</groupId>
+  <artifactId>MKD</artifactId>
+  <version>1.0</version>
+</dependency>
+```
+
+## Gradle
+```
+maven {
+  url 'https://jitpack.io'
+}
+```
+
+```
+implementation 'com.github.7we:MKD:1.0'
+```
+
 ## Learn
 ```kotlin
 val markdown: String = markdown {
