@@ -30,7 +30,7 @@ class MKD {
 
     fun code(message: String) = "`$message`"
 
-    fun blockCode(language: String, vararg lines: String) {
+    fun blockCode(language: String = "", vararg lines: String) {
         strings.add("""
             ```$language
             ${lines.joinToString("\n")}
@@ -98,11 +98,11 @@ class MKD {
         strings.add("\n\n")
     }
 
-    fun list(ordered: Boolean, isTaskList: Boolean, function: List.() -> Unit) = List(ordered, isTaskList).apply(function).toString()
+    fun list(ordered: Boolean, isTaskList: Boolean, function: List.() -> Unit) {
+        strings.add(List(ordered, isTaskList).apply(function).toString())
+    }
 
-    fun tulist(function: List.() -> Unit) = list(ordered = false, isTaskList = true, function = function)
-
-    fun tolist(function: List.() -> Unit) = list(ordered = true, isTaskList = true, function = function)
+    fun tlist(function: List.() -> Unit) = list(ordered = true, isTaskList = true, function = function)
 
     fun ulist(function: List.() -> Unit) = list(ordered = false, isTaskList = false, function = function)
 
@@ -112,7 +112,7 @@ class MKD {
         strings.add(Table(columns.toList()).apply(function).toString())
     }
 
-    fun toMarkdown() = strings.joinToString("\n")
+    fun toMarkdown() = strings.joinToString("\n\n")
 
     fun save(file: File) = FileWriter(file).apply {
         write(toMarkdown())
